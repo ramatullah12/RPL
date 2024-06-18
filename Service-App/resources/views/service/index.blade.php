@@ -17,7 +17,7 @@
                   <p class="card-description">
                     Add class <code> data Service</code>
                   </p>
-                  <a href="{{route('service.create')}}" class="btn btn-rounded btn-primary">Tambah</a>
+                  <a href="{{route('service.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
