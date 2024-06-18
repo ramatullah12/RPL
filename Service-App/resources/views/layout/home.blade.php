@@ -17,20 +17,20 @@
 
   <!-- slider stylesheet -->
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="{{('text/css')}}" href="{{('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')}}" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="{{('text/css')}}" href="{{('css/bootstrap.css')}}" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="{{('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="{{('css/style.css')}}" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="{{('css/responsive.css')}}" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
-<body class="sub_page">
+<body>
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -52,10 +52,10 @@
                   <a class="nav-link" href="{{url('home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('home')}}">Tentangan Kami</a>
+                  <a class="nav-link" href="{{url('about')}}"> Tentangan Kami</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('service')}}"> Service </a>
+                  <a class="nav-link" href="{{url('service')}}">Service</a>
                 </li>
               </ul>
             </div>
@@ -69,46 +69,16 @@
                          <i class="fa fa-sign-in-alt me-2"> {{ __('Log Out') }} </i>
                     </x-dropdown-link>
                 </form>
-          </div>
+          
         </nav>
       </div>
     </header>
     <!-- end header section -->
-  </div>
-  <div class="main-panel">
-    <div class="content-wrapper">
-      @yield('content')
-    </div>
-  </div>
-
-  <!-- who section -->
-
-  <script type="text/javascript" src="{{ url('js/jquery-3.4.1.min.js')}}"></script>
-  <script type="text/javascript" src="{{ url('js/bootstrap.js')}}"></script>
-  <script type="text/javascript" src="{{ url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js')}}">
-  </script>
-  <!-- owl carousel script 
-    -->
-  <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 0,
-      navText: [],
-      center: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        1000: {
-          items: 3
-        }
-      }
-    });
-  </script>
-  <!-- end owl carousel script -->
-
-</body>
-
-</html>
+    <!-- slider section -->
+    
+    <div class="main-panel">
+        <div class="content-wrapper">
+          @yield('content')
+        </div>
+      </div>
+  

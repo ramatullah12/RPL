@@ -12,7 +12,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $service = Service::all();
+        return view('service.index')
+                ->with('service', $service);
     }
 
     /**
@@ -20,7 +22,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('service.create');
     }
 
     /**
@@ -28,7 +30,20 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $val = $request->validate([
+            'nama' => "required", 
+            'hp' => "required", 
+            'alamat' => "required", 
+            'barang' => "required", 
+            'keluhan' => "required"
+        ]);
+
+        // simpan tabel 
+        Service::create($val);
+
+        // // radirect ke halaman list fakultas
+        return redirect()->route('service.index')->with('success', 'Data berhasil disimpan, untuk pengerjaan 3 hari dari pemeberian barang ke pada kami');
+
     }
 
     /**
