@@ -17,17 +17,17 @@
 
   <!-- slider stylesheet -->
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="{{('text/css')}}" href="{{('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')}}" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="{{('text/css')}}" href="{{('css/bootstrap.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.css')}}" />
 
   <!-- fonts style -->
-  <link href="{{('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap')}}" rel="stylesheet">
+  <link href="{{url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap')}}" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="{{('css/style.css')}}" rel="stylesheet" />
+  <link href="{{url('css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="{{('css/responsive.css')}}" rel="stylesheet" />
+  <link href="{{url('css/responsive.css')}}" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -37,9 +37,15 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <span>
-              Service MDP IT Store
-            </span>
+            <style>
+              .image-container img {
+                  height: 50px;
+                  width: 100px;
+              }   
+            </style>
+            <div class="image-container">
+              <img src="{{url('images/mdp.jpeg')}}" alt="">
+            </div>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,7 +58,7 @@
                   <a class="nav-link" href="{{url('home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('home')}}">Tentangan Kami</a>
+                  <a class="nav-link" href="{{url('about')}}">Tentangan Kami</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{url('service')}}"> Service </a>
@@ -62,7 +68,6 @@
             <div class="d-inline-flex align-items-center" style="height: 45px;">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    
                     <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();" class="me-3 text-light">

@@ -29,7 +29,6 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
-
 <body>
   <div class="hero_area">
     <!-- header section strats -->
@@ -37,9 +36,15 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <span>
-              Service MDP IT Store
-            </span>
+            <style>
+              .image-container img {
+                  height: 50px;
+                  width: 100px;
+              }   
+            </style>
+            <div class="image-container">
+              <img src="images/mdp.jpeg" alt="">
+            </div>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -16,35 +16,35 @@
             @csrf
             <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="nama" class="form-control" name="nama" value="{{ old('nama')}}" placeholder="Nama">
+                <input type="text" class="form-control" name="nama" value="{{ old('nama')}}" placeholder="Nama">
                 @Error('nama')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
               <div class="form-group">
-                <label for="no_hp">No Hp</label>
-                <input type="no_hp" class="form-control" name="no_hp" value="{{ old('no_hp')}}" placeholder="no_hp">
-                @Error('no_hp')
+                <label for="hp">No Hp</label>
+                <input type="number" class="form-control" name="hp" value="{{ old('hp')}}" placeholder="hp">
+                @Error('hp')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="alamat">Alamat</label>
-                <input type="alamat" class="form-control" name="alamat" value="{{ old('alamat')}}" placeholder="masukan alamat yang lengkap">
+                <input type="text" class="form-control" name="alamat" value="{{ old('alamat')}}" placeholder="masukan alamat yang lengkap">
                 @Error('alamat')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
                 </div>
             <div class="form-group">
                 <label for="barang">Barang</label>
-                <input type="barang" class="form-control" name="barang" value="{{ old('barang')}}" placeholder="barang">
+                <input type="text" class="form-control" name="barang" value="{{ old('barang')}}" placeholder="barang">
                 @Error('barang')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="keluhan">Keluhan</label>
-                <input type="keluhan" class="form-control" name="keluhan" value="{{ old('keluhan')}}" placeholder="keluhan">
+                <input type="text" class="form-control" name="keluhan" value="{{ old('keluhan')}}" placeholder="keluhan">
                 @Error('keluhan')
                     <span class="text-danger">{{$message}}</span>
                 @enderror

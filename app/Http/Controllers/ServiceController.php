@@ -30,6 +30,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $val = $request->validate([
             'nama' => "required", 
             'hp' => "required", 

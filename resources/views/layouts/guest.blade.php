@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <style>
     img{
-        height: 200px;
-        width: 250px;
+        height: 100px;
+        width: 150px;
     }
+    
 </style>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -11,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Service MDP IT store') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,6 +23,16 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+            <style>
+                .image-container img {
+                    height: 200px;
+                    width: 250px;
+                }   
+              </style>
+              <div class="image-container">
+                <img src="images/mdp.jpeg" alt="">
+              </div>
+            <BR></BR>
             <div class="">
                 <img src="images/isi.jpeg" alt="" sizes="1" srcset="">
                 
