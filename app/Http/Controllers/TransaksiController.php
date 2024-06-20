@@ -32,6 +32,8 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+
         $val = $request->validate([
             'barang' => "required",
             'jumblah' => "required",
@@ -43,7 +45,7 @@ class TransaksiController extends Controller
         Transaksi::create($val);
 
         // radirect ke halaman list prodi
-        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil disimpan');
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil disimpan,Barang akan kami ambil dan kami perbaiki,maksimal perbaikan 3 hari pengerjaan');
     }
 
     /**

@@ -11,7 +11,7 @@
                 <p class="card-description">
                     Formulir Transaksi
                 </p>
-                <form method="POST" action="{{ route('service.store')}}" class="forms-sample">
+                <form method="POST" action="{{ route('transaksi.store')}}" class="forms-sample">
                     @csrf
                     <div class="form-group">
                         <label for="barang">Tipe Barang</label>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label for="jumblah">Jumlah</label>
-                        <input type="number" class="form-control" name="jumblah" value="{{ old('jumblah')}}" placeholder="Jumlah">
+                        <input type="text" class="form-control" name="jumblah" value="{{ old('jumblah')}}" placeholder="Jumlah">
                         @error('jumblah')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -45,7 +45,7 @@
                         <input type="text" class="form-control" id="harga" name="harga" value="{{ old('harga') }}" placeholder="Harga" readonly>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <a href="{{ url('service')}}" class="btn btn-light">Batal</a>
+                    <a href="{{ url('transaksi')}}" class="btn btn-light">Batal</a>
                 </form>
             </div>
         </div>
