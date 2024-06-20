@@ -33,11 +33,10 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $val = $request->validate([
-            'nama' => "required", //artinya wajib isi
-            'alamat' => "required",
             'barang' => "required",
             'jumblah' => "required",
-            'produk_id' => "required"
+            'produk_id' => "required",
+            'harga' => "required"
         ]);
 
         // simpan tabel prodi

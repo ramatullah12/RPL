@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama', 'alamat','barang','jumblah','produk_id'];
+    protected $fillable = ['barang','jumblah','produk_id','harga'];
     public function produk(){
         return $this->belongsTo(Produk::class, 'produk_id');
     }

@@ -14,21 +14,7 @@
                 <form method="POST" action="{{ route('service.store')}}" class="forms-sample">
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" value="{{ old('nama')}}" placeholder="Nama">
-                        @error('nama')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="{{ old('alamat')}}" placeholder="Alamat">
-                        @error('alamat')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="barang">Barang</label>
+                        <label for="barang">Tipe Barang</label>
                         <input type="text" class="form-control" name="barang" value="{{ old('barang')}}" placeholder="Barang">
                         @error('barang')
                             <span class="text-danger">{{ $message }}</span>
@@ -65,17 +51,17 @@
         </div>
     </div>
 
-@endsection
-
-@section('scripts')
-<script>
+    
+    <script>
 document.addEventListener('DOMContentLoaded', function () {
     const produkSelect = document.getElementById('produk_id');
     const hargaInput = document.getElementById('harga');
 
     produkSelect.addEventListener('change', function () {
+
         const selectedOption = produkSelect.options[produkSelect.selectedIndex];
         const selectedPrice = selectedOption.getAttribute('data-harga');
+        console.log(selectedPrice);
         hargaInput.value = selectedPrice; // Mengatur nilai input harga
     });
 
@@ -83,4 +69,4 @@ document.addEventListener('DOMContentLoaded', function () {
     produkSelect.dispatchEvent(new Event('change'));
 });
 </script>
-@endsection
+    @endsection
