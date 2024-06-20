@@ -57,10 +57,16 @@
                   <a class="nav-link" href="{{url('home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('about')}}"> Tentangan Kami</a>
+                  <a class="nav-link" href="{{url('about')}}">Tentangan Kami</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('service')}}">Service</a>
+                  <a class="nav-link" href="{{url('produk')}}"> Produk </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('transaksi')}}"> Transaksi </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('service')}}"> Service </a>
                 </li>
               </ul>
             </div>

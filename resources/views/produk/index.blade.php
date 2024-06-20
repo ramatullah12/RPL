@@ -3,6 +3,13 @@
 @section('title','Fakultas')
 
 @section('content')
+    {{-- <h1>UMDP</h1>
+    <h2>Fakultas</h2>
+    <ul>
+    @foreach ($fakultas as $item)
+        <li>{{$item ["nama"]}}{{$item["singkatan"]}}</li>
+    @endforeach --}}
+    </ul>
     <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -10,26 +17,20 @@
                   <p class="card-description">
                     Add class <code> data Service</code>
                   </p>
-                  <a href="{{route('service.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
+                  <a href="{{route('produk.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>Nama </th>
-                          <th>NO Hp</th>
-                          <th>Alamat</th>
-                          <th>Barang</th>
-                          <th>Keluhan</th>
+                          <th>Jenis Barang </th>
+                          <th>Harga Satuan</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($service as $item)
+                        @foreach ($produk as $item)
                         <tr>
                             <td>{{$item ["nama"]}}</td>
-                            <td>{{$item["hp"]}}</td>
-                            <td>{{$item ["alamat"]}}</td>
-                            <td>{{$item["barang"]}}</td>
-                            <td>{{$item ["keluhan"]}}</td>
+                            <td>{{$item["harga"]}}</td>
                         </tr>
                          @endforeach
                       </tbody>

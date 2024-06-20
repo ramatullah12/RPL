@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class ProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $service = Service::all();
-        return view('service.index')
-                ->with('service', $service);
+        $produk = Produk::all();
+        return view('produk.index')
+                ->with('produk', $produk);
     }
 
     /**
@@ -22,7 +22,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('service.create');
+        return view('produk.create');
     }
 
     /**
@@ -30,27 +30,23 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $val = $request->validate([
             'nama' => "required", 
-            'hp' => "required", 
-            'alamat' => "required", 
-            'barang' => "required", 
-            'keluhan' => "required"
+            'harga' => "required"
         ]);
 
         // simpan tabel 
-        Service::create($val);
+        Produk::create($val);
 
         // // radirect ke halaman list fakultas
-        return redirect()->route('service.index')->with('success', 'Data berhasil disimpan, untuk selanjutnya silahkan anda isi bagian transaksi yang sudah kami sediakan');
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil disimpan');
 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Service $service)
+    public function show(Produk $produk)
     {
         //
     }
@@ -58,7 +54,7 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Service $service)
+    public function edit(Produk $produk)
     {
         //
     }
@@ -66,7 +62,7 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Produk $produk)
     {
         //
     }
@@ -74,7 +70,7 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service)
+    public function destroy(Produk $produk)
     {
         //
     }

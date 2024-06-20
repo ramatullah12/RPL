@@ -1,35 +1,37 @@
 @extends('layout.main')
 
-@section('title','Fakultas')
+@section('title','Transaksi')
 
 @section('content')
     <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Service</h4>
+                  <h4 class="card-title">Transaksi</h4>
                   <p class="card-description">
-                    Add class <code> data Service</code>
+                    Add class <code> data Transaksi</code>
                   </p>
-                  <a href="{{route('service.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
+                  <a href="{{route('transaksi.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>Nama </th>
-                          <th>NO Hp</th>
+                          <th>Nama</th>
                           <th>Alamat</th>
                           <th>Barang</th>
-                          <th>Keluhan</th>
+                          <th>Jumblah</th>
+                          <th>Nama Barang</th>
+                          <th>Harga Satuan</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($service as $item)
+                        @foreach ($transaksi as $item)
                         <tr>
                             <td>{{$item ["nama"]}}</td>
-                            <td>{{$item["hp"]}}</td>
-                            <td>{{$item ["alamat"]}}</td>
-                            <td>{{$item["barang"]}}</td>
-                            <td>{{$item ["keluhan"]}}</td>
+                            <td>{{$item["alamat"]}}</td>
+                            <td>{{$item ["barang"]}}</td>
+                            <td>{{$item["jumblah"]}}</td>
+                            <td>{{$item["produk"]["nama"]}}</td>
+                            <td>{{$item["produk"]["harga"]}}</td>
                         </tr>
                          @endforeach
                       </tbody>

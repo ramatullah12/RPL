@@ -54,10 +54,10 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{url('home')}}">Home</a>
+                  <a class="nav-link" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('about')}}"> About US</a>
+                  <a class="nav-link" href=""> About US</a>
                 </li>
               </ul>
             </div>
