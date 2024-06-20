@@ -41,7 +41,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
+            'url' => env('DB_URL'),
             'host' => env('MYSQL_ADDON_HOST', '127.0.0.1'),
             'port' => env('MYSQL_ADDON_PORT', '3306'),
             'database' => env('MYSQL_ADDON_DB', 'laravel'),
