@@ -17,9 +17,7 @@
                   <p class="card-description">
                     Add class <code> data Produk</code>
                   </p>
-                  
-                  <a href="{{route('produk.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
-                  
+                  <a href="{{route('produk.create')}}" class="btn btn-rounded btn-primary">Buat Produk</a>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>

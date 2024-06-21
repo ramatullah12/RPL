@@ -29,7 +29,7 @@ class ProdukPolicy
      */
     public function create(User $user): bool
     {
-        return $user->role === 'A';
+        
     }
 
     /**
