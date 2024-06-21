@@ -68,7 +68,20 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $val = $request->validate([
+            'nama' => "required", 
+            'hp' => "required", 
+            'alamat' => "required", 
+            'barang' => "required", 
+            'keluhan' => "required"
+        ]);
+
+        // simpan tabel 
+        Service::create($val);
+
+        // // radirect ke halaman list fakultas
+        return redirect()->route('service.index')->with('success', 'Data berhasil diubah');
+
     }
 
     /**

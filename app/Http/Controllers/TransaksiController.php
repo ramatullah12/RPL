@@ -70,7 +70,18 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, Transaksi $transaksi)
     {
-        //
+        $val = $request->validate([
+            'barang' => "required",
+            'jumblah' => "required",
+            'produk_id' => "required",
+            'harga' => "required"
+        ]);
+
+        // simpan tabel prodi
+        Transaksi::create($val);
+
+        // radirect ke halaman list prodi
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil diUbah');
     }
 
     /**
