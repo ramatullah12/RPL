@@ -56,7 +56,7 @@ class ProdukController extends Controller
      */
     public function edit(Produk $produk)
     {
-        //
+        return view('produk.edit')->with('produk',$produk);
     }
 
     /**
@@ -72,6 +72,7 @@ class ProdukController extends Controller
      */
     public function destroy(Produk $produk)
     {
-        //
+        $produk->delete(); // hapus data mahasiswa
+        return redirect()->route('produk.index')->with('success',' Data berhasil dihapus.');
     }
 }
