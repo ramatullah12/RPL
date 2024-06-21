@@ -53,7 +53,7 @@ class TransaksiController extends Controller
      */
     public function show(Transaksi $transaksi)
     {
-        //
+        
     }
 
     /**
@@ -61,7 +61,7 @@ class TransaksiController extends Controller
      */
     public function edit(Transaksi $transaksi)
     {
-        //
+        return view('transaksi.edit')->with('transaksi',$transaksi);
     }
 
     /**
@@ -77,6 +77,7 @@ class TransaksiController extends Controller
      */
     public function destroy(Transaksi $transaksi)
     {
-        //
+        $transaksi->delete(); // hapus data mahasiswa
+        return redirect()->route('transaksi.index')->with('success',' Data berhasil dihapus.');
     }
 }

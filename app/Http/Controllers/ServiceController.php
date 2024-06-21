@@ -60,7 +60,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('service.edit')->with('service',$service);
     }
 
     /**
@@ -76,6 +76,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete(); // hapus data mahasiswa
+        return redirect()->route('service.index')->with('success',' Data berhasil dihapus.');
     }
 }
