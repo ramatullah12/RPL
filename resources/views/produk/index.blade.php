@@ -17,9 +17,9 @@
                   <p class="card-description">
                     Add class <code> data Service</code>
                   </p>
-                  @can('create', App\Mahasiswa::class)
+                  
                   <a href="{{route('produk.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
-                  @endcan
+                  
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
