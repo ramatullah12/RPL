@@ -13,9 +13,9 @@
     <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Service</h4>
+                  <h4 class="card-title">Produk</h4>
                   <p class="card-description">
-                    Add class <code> data Service</code>
+                    Add class <code> data Produk</code>
                   </p>
                   
                   <a href="{{route('produk.create')}}" class="btn btn-rounded btn-primary">Buat Formulir</a>
