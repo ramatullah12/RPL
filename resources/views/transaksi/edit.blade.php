@@ -19,7 +19,7 @@
                         @error('barang')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                    </div>
+                    </dsiv>
                     <div class="form-group">
                         <label for="jumblah">Jumlah</label>
                         <input type="text" class="form-control" name="jumblah" value="{{ old('jumblah')}}" placeholder="Jumlah">

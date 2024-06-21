@@ -30,8 +30,8 @@
                             <td>{{$item["produk"]["nama"]}}</td>
                             <td>{{$item["harga"]}}</td>
                             <td>
-                              <a href="{{ route('service.edit', $item["id"]) }}" class="btn btn-sm btn-rounded btn-warning">Ubah</a>
-                              <form action="{{ route('service.destroy', $item["id"]) }}" method="post" style="display:inline-block;">
+                              <a href="{{ route('transaksi.edit', $item["id"]) }}" class="btn btn-sm btn-rounded btn-warning">Ubah</a>
+                              <form action="{{ route('transaksi.destroy', $item["id"]) }}" method="post" style="display:inline-block;">
                                   @method('DELETE')
                                   @csrf
                                   <button type="submit" class="btn btn-sm btn-rounded btn-danger show_confirm" data-name="{{ $item["nama"] }}">Hapus</button>
