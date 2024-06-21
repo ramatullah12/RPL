@@ -67,6 +67,7 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request);
         // Validate the request data
         $request->validate([
             'nama' => 'required|string|max:255',
