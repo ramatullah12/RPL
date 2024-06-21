@@ -16,14 +16,14 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="nama">Jenis Barang</label>
-                        <input type="text" class="form-control" name="nama" value="{{ old('nama', $produk->nama) }}" placeholder="jenis">
+                        <input type="text" class="form-control" name="nama" value="{{ old('nama', $produk->nama) }}" placeholder="Jenis Barang">
                         @error('nama')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="harga">Harga Satuan</label>
-                        <input type="number" class="form-control" name="harga" value="{{ old('harga', $produk->harga) }}" placeholder="Harga">
+                        <input type="number" class="form-control" name="harga" value="{{ old('harga', $produk->harga) }}" placeholder="Harga Satuan">
                         @error('harga')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

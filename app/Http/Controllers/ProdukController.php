@@ -67,19 +67,16 @@ class ProdukController extends Controller
      */
     public function update(Request $request, Produk $produk)
     {
-        if ($request->user()->cannot('create',Produk::class)){
-            abort(403);
-        }
-        $val = $request->validate([
-            'nama' => "required", 
-            'harga' => "required"
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'harga' => 'required|numeric|min:0',
         ]);
-
-        // simpan tabel 
-        Produk::create($val);
-
-        // // radirect ke halaman list fakultas
-        return redirect()->route('produk.index')->with('success', 'Produk berhasil Diubah');
+    
+        $produk->nama = $request->input('nama');
+        $produk->harga = $request->input('harga');
+        $produk->save();
+    
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil diupdate');
     }
 
     /**
