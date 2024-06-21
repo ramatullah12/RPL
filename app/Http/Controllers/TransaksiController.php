@@ -61,7 +61,8 @@ class TransaksiController extends Controller
      */
     public function edit(Transaksi $transaksi)
     {
-        return view('transaksi.edit')->with('transaksi',$transaksi);
+        $produk = Produk::all();
+        return view('transaksi.edit')->with('produk',$produk)->with('transaksi',$transaksi);
     }
 
     /**
