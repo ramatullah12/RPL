@@ -31,5 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::put('/produk/{id}', [ProdukController::class, 'update'])->name('produk.update');
+Route::put('/service/{id}', [ServiceController::class, 'update'])->name('service.update');
+Route::put('/transaksi/{id}', [TransaksiController::class, 'update'])->name('transaksi.update');
 
 require __DIR__.'/auth.php';

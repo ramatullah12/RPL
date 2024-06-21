@@ -68,21 +68,32 @@ class TransaksiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Transaksi $transaksi)
-    {
-        $val = $request->validate([
-            'barang' => "required",
-            'jumblah' => "required",
-            'produk_id' => "required",
-            'harga' => "required"
-        ]);
+    public function update(Request $request, $id)
+{
+    // Validasi data input
+    $request->validate([
+        'barang' => 'required|string|max:255',
+        'jumblah' => 'required|integer|min:1',
+        'produk_id' => 'required|exists:produks,id',
+        'harga' => 'required|numeric|min:0',
+    ]);
 
-        // simpan tabel prodi
-        Transaksi::create($val);
+    // Cari data transaksi berdasarkan ID
+    $transaksi = Transaksi::findOrFail($id);
 
-        // radirect ke halaman list prodi
-        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil diUbah');
-    }
+    // Update detail transaksi
+    $transaksi->barang = $request->barang;
+    $transaksi->jumblah = $request->jumblah;
+    $transaksi->produk_id = $request->produk_id;
+    $transaksi->harga = $request->harga;
+
+    // Simpan perubahan
+    $transaksi->save();
+
+    // Redirect kembali ke halaman transaksi dengan pesan sukses
+    return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil diupdate');
+}
+
 
     /**
      * Remove the specified resource from storage.
