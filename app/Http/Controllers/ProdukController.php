@@ -30,6 +30,9 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->user()->cannot('create',Produk::class)){
+            abort(403);
+        }
         $val = $request->validate([
             'nama' => "required", 
             'harga' => "required"
