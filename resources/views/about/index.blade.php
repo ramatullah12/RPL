@@ -16,7 +16,7 @@
         <div class="detail-box">
           <div class="heading_container">
             <h2>
-              Tentangan Kami
+              Tentang Kami
             </h2>
           </div>
           <p>
