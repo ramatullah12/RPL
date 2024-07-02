@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title','Service')
+@section('title', 'Service')
 
 @section('content')
 <div class="col-lg-12 grid-margin stretch-card">
@@ -20,24 +20,28 @@
                             <th>Alamat</th>
                             <th>Barang</th>
                             <th>Keluhan</th>
+                            <th>Harga Satuan</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($service as $item)
+                        @foreach ($services as $item)
                         <tr>
-                            <td>{{ $item["nama"] }}</td>
-                            <td>{{ $item["hp"] }}</td>
-                            <td>{{ $item["alamat"] }}</td>
-                            <td>{{ $item["barang"] }}</td>
-                            <td>{{ $item["keluhan"] }}</td>
+                            <td>{{ $item ['nama'] }}</td>
+                            <td>{{ $item ['hp'] }}</td>
+                            <td>{{ $item ['alamat'] }}</td>
+                            <td>{{ $item->produk->nama }}</td> {{-- Menampilkan nama produk --}}
+                            <td>{{ $item ['keluhan'] }}</td>
+                            <td>{{ $item->produk->harga }}</td> {{-- Menampilkan harga produk --}}
                             <td>
-                                <a href="{{ route('service.edit', $item["id"]) }}" class="btn btn-sm btn-rounded btn-warning">Ubah</a>
-                                <form action="{{ route('service.destroy', $item["id"]) }}" method="post" style="display:inline-block;">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-rounded btn-danger show_confirm" data-name="{{ $item["nama"] }}">Hapus</button>
-                                </form>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <a href="{{ route('service.edit', $item->id) }}" class="btn btn-sm btn-warning mr-1">Ubah</a>
+                                    <form action="{{ route('service.destroy', $item->id) }}" method="post" style="display:inline-block;">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-danger show_confirm" data-name="{{ $item->nama }}">Hapus</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

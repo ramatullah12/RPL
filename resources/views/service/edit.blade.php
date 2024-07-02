@@ -1,59 +1,43 @@
 @extends('layout.main')
 
-@section('title', 'Edit Service')
+@section('title', 'Edit Layanan')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Edit Service</h4>
-                    <p class="card-description">
-                        Formulir Edit Service
-                    </p>
-                    <form method="POST" action="{{ route('service.update', $service->id) }}" class="forms-sample">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" name="nama" value="{{ old('nama', $service->nama) }}" placeholder="Nama">
-                            @error('nama')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="hp">No Hp</label>
-                            <input type="number" class="form-control" name="hp" value="{{ old('hp', $service->hp) }}" placeholder="No Hp">
-                            @error('hp')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" value="{{ old('alamat', $service->alamat) }}" placeholder="Masukkan alamat yang lengkap">
-                            @error('alamat')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="barang">Barang</label>
-                            <input type="text" class="form-control" name="barang" value="{{ old('barang', $service->barang) }}" placeholder="Barang">
-                            @error('barang')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="keluhan">Keluhan</label>
-                            <input type="text" class="form-control" name="keluhan" value="{{ old('keluhan', $service->keluhan) }}" placeholder="Keluhan">
-                            @error('keluhan')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-primary mr-2">Update</button>
-                        <a href="{{ url('service') }}" class="btn btn-light">Batal</a>
-                    </form>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Layanan</h4>
+            <form method="POST" action="{{ route('service.update', $service->id) }}" class="forms-sample">
+                @csrf
+                @method('PUT')
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" value="{{ $service->nama }}" placeholder="Nama">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="hp">NO Hp</label>
+                    <input type="text" class="form-control" id="hp" name="hp" value="{{ $service->hp }}" placeholder="NO hp">
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea class="form-control" id="alamat" name="alamat" rows="4" placeholder="Alamat">{{ $service->alamat }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="produk_id">Barang</label>
+                    <select class="form-control" id="produk_id" name="produk_id">
+                        @foreach($produks as $produk)
+                            <option value="{{ $produk->id }}" {{ $service->produk_id == $produk->id ? 'selected' : '' }}>{{ $produk->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="keluhan">Keluhan</label>
+                    <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="Keluhan">{{ $service->keluhan }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                <a href="{{ route('service.index') }}" class="btn btn-light">Batal</a>
+            </form>
         </div>
     </div>
+</div>
 @endsection

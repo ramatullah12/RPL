@@ -1,59 +1,57 @@
 @extends('layout.main')
 
-@section('title','Service')
+@section('title', 'Buat Layanan')
 
 @section('content')
-<div class="row">
-    {{-- formulirtambah fakultas --}}
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Service</h4>
-            <p class="card-description">
-              Formulir Service
-            </p>
-            <form method="POST" action="{{ route('service.store')}}" class ="forms-sample">
-            @csrf
-            <div class="form-group">
-                <label for="nama">Nama</label>
-                <input type="text" class="form-control" name="nama" value="{{ old('nama')}}" placeholder="Nama">
-                @Error('nama')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
-              </div>
-              <div class="form-group">
-                <label for="hp">No Hp</label>
-                <input type="number" class="form-control" name="hp" value="{{ old('hp')}}" placeholder="hp">
-                @Error('hp')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
-              </div>
-              <div class="form-group">
-                <label for="alamat">Alamat</label>
-                <input type="text" class="form-control" name="alamat" value="{{ old('alamat')}}" placeholder="masukan alamat yang lengkap">
-                @Error('alamat')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Buat Layanan</h4>
+            <form method="POST" action="{{ route('service.store') }}" class="forms-sample">
+                @csrf
+                <div class="form-group">
+                    <label for="nama">Nama Pelanggan:</label>
+                    <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Masukkan nama pelanggan" required>
+                    @error('nama')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
-            <div class="form-group">
-                <label for="barang">Barang</label>
-                <input type="text" class="form-control" name="barang" value="{{ old('barang')}}" placeholder="barang">
-                @Error('barang')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
-              </div>
-              <div class="form-group">
-                <label for="keluhan">Keluhan</label>
-                <input type="text" class="form-control" name="keluhan" value="{{ old('keluhan')}}" placeholder="keluhan">
-                @Error('keluhan')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
-              </div>
-              <button type="submit" class="btn btn-primary mr-2">Submit</button>
-              <a href="{{ url('service')}}" class="btn btn-light">Batal</a>
+                <div class="form-group">
+                    <label for="hp">Nomor HP:</label>
+                    <input type="text" class="form-control" id="hp" name="hp" value="{{ old('hp') }}" placeholder="Masukkan nomor HP pelanggan" required>
+                    @error('hp')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat:</label>
+                    <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat pelanggan" required>{{ old('alamat') }}</textarea>
+                    @error('alamat')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="produk_id">Pilih Produk:</label>
+                    <select class="form-control" id="produk_id" name="produk_id" required>
+                        @foreach($produks as $produk)
+                            <option value="{{ $produk->id }}">{{ $produk->nama }} - {{ $produk->harga }}</option>
+                        @endforeach
+                    </select>
+                    @error('produk_id')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="keluhan">Keluhan:</label>
+                    <textarea class="form-control" id="keluhan" name="keluhan" rows="3" placeholder="Masukkan keluhan pelanggan" required>{{ old('keluhan') }}</textarea>
+                    @error('keluhan')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                <a href="{{ route('service.index') }}" class="btn btn-light">Batal</a>
             </form>
-          </div>
         </div>
-      </div>
+    </div>
 </div>
 @endsection
