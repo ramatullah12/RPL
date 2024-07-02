@@ -24,9 +24,9 @@
   <!-- fonts style -->
   <link href="{{url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap')}}" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="{{url('css/style.css" rel="stylesheet')}}" />
+  <link href="{{url('css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="{{url('css/responsive.css" rel="stylesheet')}}" />
+  <link href="{{url('css/responsive.css')}}" rel="stylesheet" />
 </head>
 <body>
   <div class="hero_area">
@@ -42,7 +42,7 @@
               }   
             </style>
             <div class="image-container">
-              <img src="{{url('images/mdp.jpeg')}}" alt="">
+              <img src="images/mdp.jpeg" alt="">
             </div>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
