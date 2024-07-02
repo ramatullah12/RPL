@@ -52,4 +52,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const produkSelect = document.getElementById('produk_id');
+            const hargaInput = document.getElementById('harga');
+
+            produkSelect.addEventListener('change', function () {
+                const selectedOption = produkSelect.options[produkSelect.selectedIndex];
+                const selectedPrice = selectedOption.getAttribute('data-harga');
+                hargaInput.value = selectedPrice; // Mengatur nilai input harga
+            });
+
+            // Trigger change event to set initial value
+            const initialSelectedOption = produkSelect.options[produkSelect.selectedIndex];
+            if (initialSelectedOption) {
+                const initialPrice = initialSelectedOption.getAttribute('data-harga');
+                hargaInput.value = initialPrice;
+            }
+        });
+    </script>
 @endsection

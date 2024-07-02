@@ -10,8 +10,13 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::with('produk')->get();
-        return view('service.index', compact('services'));
+        if(auth()->user()->role == 'P'){
+            $service = Service::where('user_id', auth()->user()->id)->get();
+        }else{
+            $service = Service::all();
+        }
+        return view('service.index', compact('service'));
+
     }
 
     public function create()
@@ -23,6 +28,9 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
+        if ($request->user()->cannot('create',Service::class)){
+            abort(403);
+        }
         $request->validate([
             'nama' => 'required',
             'hp' => 'required',

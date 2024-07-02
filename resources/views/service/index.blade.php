@@ -25,7 +25,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($services as $item)
+                        @foreach ($service as $item)
                         <tr>
                             <td>{{ $item ['nama'] }}</td>
                             <td>{{ $item ['hp'] }}</td>

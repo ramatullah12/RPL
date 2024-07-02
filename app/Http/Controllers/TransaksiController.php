@@ -13,7 +13,11 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksi = Transaksi::all();
+        if(auth()->user()->role == 'P'){
+            $transaksi = Transaksi::where('user_id', auth()->user()->id)->get();
+        }else{
+            $transaksi = Transaksi::all();
+        }
         return view('transaksi.index')
                 ->with('transaksi', $transaksi);
     }
@@ -33,7 +37,9 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-
+        if ($request->user()->cannot('create',Transaksi::class)){
+            abort(403);
+        }
         $val = $request->validate([
             'barang' => "required",
             'jumblah' => "required",
@@ -59,10 +65,11 @@ class TransaksiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Transaksi $transaksi)
+    public function edit($id)
     {
+        $transaksi = Transaksi::findOrFail($id);
         $produk = Produk::all();
-        return view('transaksi.edit')->with('produk',$produk)->with('transaksi',$transaksi);
+        return view('transaksi.edit', compact('transaksi', 'produk'));
     }
 
     /**

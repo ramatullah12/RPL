@@ -1,9 +1,8 @@
 @extends('layout.main')
 
-@section('title', 'Fakultas')
+@section('title', 'Transaksi')
 
 @section('content')
-    {{-- Formulir Tambah Fakultas --}}
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
