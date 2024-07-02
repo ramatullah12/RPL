@@ -51,7 +51,7 @@ class TransaksiController extends Controller
         Transaksi::create($val);
 
         // radirect ke halaman list prodi
-        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil disimpan,Barang akan kami ambil dan kami perbaiki,maksimal perbaikan 3 hari pengerjaan');
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil disimpan,Barang akan kami ambil dan kami perbaiki,maksimal perbaikan 3 hari pengerjaan untuk pembayaran silakan kirim ke no rekening 88993344 ');
     }
 
     /**

@@ -19,7 +19,9 @@
                           <th>Jumblah</th>
                           <th>Nama Barang</th>
                           <th>Harga Satuan</th>
+                          @can('create', App\Transaksi::class)
                           <th>Actions</th>
+                          @endcan
                         </tr>
                       </thead>
                       <tbody>
@@ -34,8 +36,10 @@
                               <form action="{{ route('transaksi.destroy', $item["id"]) }}" method="post" style="display:inline-block;">
                                   @method('DELETE')
                                   @csrf
+                                  @can('create', App\Transaksi::class)
                                   <button type="submit" class="btn btn-sm btn-rounded btn-danger show_confirm" data-name="{{ $item["nama"] }}">Hapus</button>
-                              </form>
+                                  @endcan
+                                </form>
                           </td>
                       </tr>
                       @endforeach

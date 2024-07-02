@@ -41,7 +41,7 @@ class ServiceController extends Controller
 
         Service::create($request->all());
 
-        return redirect()->route('service.index')->with('success', 'Service berhasil ditambahkan');
+        return redirect()->route('service.index')->with('success', 'Service berhasil ditamuntuk selanjutnya tolong di masuk ke bagian transaksi yang sudah kami sediakan');
     }
 
     public function edit($id)
